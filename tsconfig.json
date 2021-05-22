@@ -12,7 +12,15 @@
     "resolveJsonModule": true,
     "types": ["node", "@types/jest"],
     "typeRoots" : ["./node_modules/@types"],
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "baseUrl": "src",
+    "paths": {
+      "@adapter/*": ["adapter/*"],
+      "@app/*": ["app/*"],
+      "@core/*": ["core/*"],
+      "@domain/*": ["domain/*"],
+      "@infra/*": ["infra/*"]
+    }
   },
   "include": [
     "src/**/*"

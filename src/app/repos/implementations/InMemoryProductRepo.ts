@@ -1,5 +1,5 @@
 import { IProductRepo } from '../productRepo';
-import { Product } from '../../../domain/Product';
+import { Product } from '../../../domain/entities/Product';
 
 export class InMemoryProductRepo implements IProductRepo {
   private products: Product[];
@@ -26,5 +26,13 @@ export class InMemoryProductRepo implements IProductRepo {
     if (product === undefined) throw new Error('Product not found');
 
     return product;
+  }
+
+  public async save(product: Product): Promise<void> {
+    const exists = await this.exists(product.sku);
+
+    // if (!exists) {
+    //   const newProduct = this.
+    // }
   }
 }
