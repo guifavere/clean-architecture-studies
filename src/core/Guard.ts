@@ -1,13 +1,7 @@
-interface IGuardResultError {
-  succeeded: false;
-  message: string;
+interface IGuardResult {
+  succeeded: boolean;
+  message?: string;
 }
-
-interface IGuardResultSuccess {
-  succeeded: true;
-}
-
-type IGuardResult = IGuardResultError | IGuardResultSuccess;
 
 interface IGuardArgument {
   argument: any;

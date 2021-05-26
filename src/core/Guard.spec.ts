@@ -23,19 +23,19 @@ describe('The combine method', () => {
 });
 
 describe('The greaterThan method', () => {
-  it('should return succeeded: false, when minimumValue greater than actualValue', () => {
+  it("should return succeeded: false, 1 is'nt greater than 2", () => {
     const { succeeded } = Guard.greaterThan(2, 1);
 
     expect(succeeded).toBeFalsy();
   });
 
-  it('should return succeeded: false, when minimumValue equals to actualValue', () => {
+  it("should return succeeded: false, 4 isn't greater than 4", () => {
     const { succeeded } = Guard.greaterThan(4, 4);
 
     expect(succeeded).toBeFalsy();
   });
 
-  it('should return succeeded: true, when minimumValue lower than actualValue', () => {
+  it('should return succeeded: true, 9 is greater than 6', () => {
     const { succeeded } = Guard.greaterThan(6, 9);
 
     expect(succeeded).toBeTruthy();
@@ -43,19 +43,19 @@ describe('The greaterThan method', () => {
 });
 
 describe('The againstAtLeast method', () => {
-  it('should return succeeded: false, when text length lower than numChars', () => {
+  it('should return succeeded: false, "test" is less than 5 chars', () => {
     const { succeeded } = Guard.againstAtLeast(5, 'test');
 
     expect(succeeded).toBeFalsy();
   });
 
-  it('should return succeeded: true, when text length equals to numChars', () => {
+  it('should return succeeded: true, "test" is 4 chars', () => {
     const { succeeded } = Guard.againstAtLeast(4, 'test');
 
     expect(succeeded).toBeTruthy();
   });
 
-  it('should return succeeded: true, when text length greater than numChars', () => {
+  it('should return succeeded: true, "test test" is more than 8 chars', () => {
     const { succeeded } = Guard.againstAtLeast(8, 'test test');
 
     expect(succeeded).toBeTruthy();
@@ -63,19 +63,19 @@ describe('The againstAtLeast method', () => {
 });
 
 describe('The againstAtMost method', () => {
-  it('should return succeeded: false, when text length greater than numChars', () => {
+  it('should return succeeded: false, "test" is more than 3 chars', () => {
     const { succeeded } = Guard.againstAtMost(3, 'test');
 
     expect(succeeded).toBeFalsy();
   });
 
-  it('should return succeeded: true, when text length equals to numChars', () => {
+  it('should return succeeded: true, "test" is equals to 4 chars', () => {
     const { succeeded } = Guard.againstAtMost(4, 'test');
 
     expect(succeeded).toBeTruthy();
   });
 
-  it('should return succeeded: true, when text length lower than numChars', () => {
+  it('should return succeeded: true, "test test" is less than 10 chars', () => {
     const { succeeded } = Guard.againstAtMost(10, 'test test');
 
     expect(succeeded).toBeTruthy();
@@ -95,7 +95,7 @@ describe('The againstNullOrUndefined method', () => {
     expect(succeeded).toBeFalsy();
   });
 
-  it('should return succeeded: true, when argument has value', () => {
+  it('should return succeeded: true, when argument is: "test"', () => {
     const { succeeded } = Guard.againstNullOrUndefined('test', 'value');
 
     expect(succeeded).toBeTruthy();
@@ -123,7 +123,7 @@ describe('The againstNullOrUndefinedBulk method', () => {
     expect(succeeded).toBeFalsy();
   });
 
-  it('should return succeeded: true, when all arguments have value', () => {
+  it("should return succeeded: true, when all arguments aren't null or undefined", () => {
     const args = [
       { argument: 'john doe', argumentName: 'name' },
       { argument: 55, argumentName: 'age' },
